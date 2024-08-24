@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultos - Legacy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .container.cultos::before, .container.cultos::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 150px;
+            background-repeat: no-repeat;
+            z-index: 1;
+        }
+
+        .container.cultos::before {
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: url('img/Vitoria.jpg');
+            background-size: cover;
+            background-position: top center;
+            background-repeat: no-repeat;
+            z-index: 4;
+        }
+
+        .container.cultos::after {
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: url('img/Fe\ barra.jpg');
+            background-size: cover;
+            background-position: top center;
+            background-repeat: no-repeat;
+            z-index: 4;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: rgb(170, 0, 0);
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        header img {
+            vertical-align: middle;
+            height: 160px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 3px solid white;
+            border-radius: 5px;
+            background-color: rgba(51, 51, 51, 0.6);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: rgb(241, 9, 9);
+            color: #ffffff;
+        }
+
+        .culto-page {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 50px;
+            flex-direction: column;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .button-container {
+            text-align: center;
+        }
+
+        .culto-button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            background-color: rgba(241, 9, 9, 0.8);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            display: block;
+        }
+
+        .culto-button:hover {
+            background-color: rgb(170, 0, 0);
+            transform: scale(1.05);
+        }
+
+        .button-image {
+            width: 200px; /* Ajuste conforme necessário */
+            height: auto;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            width: 100%;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container cultos">
+        <header>
+            <a href="index.html"><img src="img/Legacy_Logotype_Red.png" alt="Legacy"></a>
+            <nav>
+                <ul>
+                    <li><a href="leaders.html">Líderes</a></li>
+                   <!--<li><a href="#ministerios">Ministérios</a></li>-->
+                    <li><a href="maps.html">Local</a></li>
+                    <li><a href="culto.html">Cultos</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="culto-page">
+                <div class="buttons">
+                    <div class="button-container">
+                        <button class="culto-button">Culto de Fé</button>
+                        <img src="img/quarta.jpg" alt="Culto de Quarta" class="button-image">
+                    </div>
+                    <div class="button-container">
+                        <button class="culto-button">Culto Sábado (Legacy)</button>
+                        <img src="img/sab.jpg" alt="Culto Sábado (Legacy)" class="button-image">
+                    </div>
+                    <div class="button-container">
+                        <button class="culto-button">Domingo Culto da Família</button>
+                        <img src="img/domigo.jpg" alt="Domingo Culto da Família" class="button-image">
+                    </div>
+                    <div class="button-container">
+                        <button class="culto-button">Culto Rockets</button>
+                        <img src="img/rockets.jpg" alt="Culto Rockets" class="button-image">
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2024 Legacy. Todos os direitos reservados.
