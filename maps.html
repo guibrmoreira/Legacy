@@ -28,23 +28,19 @@
             bottom: 0;
             width: 150px; /* Largura padrão das imagens laterais */
             background-repeat: no-repeat;
-            z-index: 3;
+            background-size: cover;
+            background-position: center;
+            z-index:5; /* Ajuste do z-index para garantir que as imagens fiquem atrás do cabeçalho */
         }
 
         .container.maps::before {
             left: 0;
             background-image: url('img/Me.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
         }
 
         .container.maps::after {
             right: 0;
-            background-image: url('img/Ju.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            background-image: url('img/juninho.jpg');
         }
 
         header {
@@ -53,7 +49,7 @@
             padding: 20px;
             text-align: center;
             position: relative;
-            z-index: 2;
+            z-index: 2; /* Cabeçalho acima das imagens laterais */
         }
 
         header img {
@@ -101,6 +97,7 @@
             height: 400px; /* Ajuste conforme necessário */
             width: 100%;
             max-width: 800px; /* Limitar a largura máxima do mapa */
+            border-radius: 10px; /* Adicionar bordas arredondadas ao mapa */
         }
 
         .address {
