@@ -87,6 +87,7 @@ nav a:hover {
     background-image: url('img/Gui.jpg'), url('img/Joao.jpg'), url('img/FeBarra.jpg');
     background-size: cover;
     background-position: top center, center center, bottom center;
+    z-index: 3;
 }
 
 .container::after {
@@ -94,6 +95,7 @@ nav a:hover {
     background-image: url('img/Ka.jpg'), url('img/Brenda.jpg'), url('img/Du.jpg');
     background-size: cover;
     background-position: top center, center center, bottom center;
+    z-index: 3;
 }
 
 .containerr::before {
