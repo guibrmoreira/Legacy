@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #333;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 /* Container Principal */
@@ -13,7 +13,7 @@ body {
     min-height: 100vh;
     padding: 20px;
     box-sizing: border-box;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* Cabeçalho */
@@ -61,7 +61,7 @@ nav a {
     padding: 10px 20px;
     border: 3px solid white;
     border-radius: 5px;
-    background-color: rgba(51, 51, 51, 0.6);
+    background-color: rgba(0, 0, 0, 0.6);
     transition: background-color 0.3s, color 0.3s;
 }
 
