@@ -172,11 +172,18 @@ footer {
 @media (max-width: 768px) {
     .container::before, .container::after,
     .containerr::before, .containerr::after {
-        display: none;
+        width: 60px; /* Reduzir a largura das imagens laterais em telas pequenas */
+        background-size: contain; /* Ajustar o tamanho das imagens para caber no contêiner */
+        background-position: center; /* Garantir que a posição das imagens fique centralizada */
     }
 
     nav ul {
         flex-direction: column;
+        margin: 0;
+    }
+
+    nav ul li {
+        margin: 5px 0;
     }
 
     .leaders {
@@ -186,5 +193,9 @@ footer {
 
     main h2 {
         font-size: 2em;
+    }
+
+    p.info {
+        font-size: 1em;
     }
 }

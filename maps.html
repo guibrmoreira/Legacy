@@ -33,24 +33,18 @@
 
         .container.maps::before {
             left: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             background-image: url('img/Me.jpg');
             background-size: cover;
-            background-position: top center;
+            background-position: center;
             background-repeat: no-repeat;
             z-index: 4;
         }
 
         .container.maps::after {
             right: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             background-image: url('img/Ju.jpg');
             background-size: cover;
-            background-position: top center;
+            background-position: center;
             background-repeat: no-repeat;
             z-index: 4;
         }
@@ -108,6 +102,7 @@
         gmp-map {
             height: 400px; /* Ajuste conforme necessário */
             width: 100%;
+            max-width: 800px; /* Limitar a largura máxima do mapa */
         }
 
         .address {
@@ -133,12 +128,20 @@
             padding: 0;
         }
 
-        /* Ajuste para telas menores */
         @media (max-width: 768px) {
             .container.maps::before,
             .container.maps::after {
                 width: 60px; /* Reduzir a largura das imagens laterais em telas pequenas */
                 background-size: contain; /* Ajustar o tamanho das imagens para caber no contêiner */
+            }
+
+            gmp-map {
+                height: 300px; /* Reduzir a altura do mapa em telas pequenas */
+                width: 100%;
+            }
+
+            .address {
+                font-size: 1em; /* Reduzir o tamanho da fonte em telas pequenas */
             }
         }
     </style>
@@ -151,7 +154,6 @@
             <nav>
                 <ul>
                     <li><a href="leaders.html">Líderes</a></li>
-                    <!--<li><a href="#ministerios">Ministérios</a></li>-->
                     <li><a href="maps.html">Local</a></li>
                     <li><a href="culto.html">Cultos</a></li>
                 </ul>

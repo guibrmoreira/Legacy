@@ -33,24 +33,18 @@
 
         .container.cultos::before {
             left: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             background-image: url('img/Vitoria.jpg');
             background-size: cover;
-            background-position: top center;
+            background-position: center;
             background-repeat: no-repeat;
             z-index: 4;
         }
 
         .container.cultos::after {
             right: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-image: url('img/Fe\ barra.jpg');
+            background-image: url('img/Fe barra.jpg');
             background-size: cover;
-            background-position: top center;
+            background-position: center;
             background-repeat: no-repeat;
             z-index: 4;
         }
@@ -99,11 +93,10 @@
 
         .culto-page {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             gap: 20px;
             margin-top: 50px;
-            flex-direction: column;
         }
 
         .buttons {
@@ -135,7 +128,7 @@
         }
 
         .button-image {
-            width: 200px; /* Ajuste conforme necessário */
+            width: 200px;
             height: auto;
             border-radius: 10px;
             margin-top: 10px;
@@ -150,34 +143,34 @@
             width: 100%;
             z-index: 2;
         }
+
         .container.cultos::before,
-.container.cultos::after {
-    width: 120px; /* Ajuste a largura para algo intermediário */
-    background-size: cover; /* Manter o tamanho de cobertura para uma aparência mais consistente */
-}
+        .container.cultos::after {
+            width: 120px; /* Ajustar a largura para algo intermediário */
+            background-size: cover; /* Manter o tamanho de cobertura para uma aparência mais consistente */
+        }
 
-@media (max-width: 768px) {
-    .container.cultos::before,
-    .container.cultos::after {
-        width: 80px; /* Um pouco maior para telas pequenas */
-    }
+        @media (max-width: 768px) {
+            .container.cultos::before,
+            .container.cultos::after {
+                width: 80px; /* Ajuste a largura para telas pequenas */
+            }
 
-    .button-container {
-        width: 100%;
-    }
+            .button-container {
+                width: 100%;
+            }
 
-    .culto-button {
-        width: 90%; /* Tornar os botões responsivos, mas não ocupando 100% */
-        padding: 15px; /* Mantém o tamanho dos botões confortável */
-        font-size: 1.1em; /* Um pouco maior que o anterior */
-    }
+            .culto-button {
+                width: 90%; /* Tornar os botões responsivos, mas não ocupando 100% */
+                padding: 15px; /* Ajustar o padding para tamanhos confortáveis */
+                font-size: 1.1em; /* Ajuste do tamanho da fonte */
+            }
 
-    .button-image {
-        width: 90%; /* Ajustar a largura das imagens, sem cobrir todo o espaço */
-        height: auto;
-    }
-}
-
+            .button-image {
+                width: 90%; /* Ajuste a largura das imagens para não cobrir todo o espaço */
+                height: auto;
+            }
+        }
     </style>
 </head>
 <body>
@@ -187,7 +180,6 @@
             <nav>
                 <ul>
                     <li><a href="leaders.html">Líderes</a></li>
-                   <!--<li><a href="#ministerios">Ministérios</a></li>-->
                     <li><a href="maps.html">Local</a></li>
                     <li><a href="culto.html">Cultos</a></li>
                 </ul>
@@ -217,4 +209,7 @@
         </main>
     </div>
     <footer>
-        <p>&copy; 2024 Legacy. Todos os direitos reservados.
+        <p>&copy; 2024 Legacy. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
