@@ -81,7 +81,7 @@ nav a:hover {
     background-repeat: no-repeat;
     background-size: cover; /* Garantir que as imagens cubram toda a área */
     background-position: center; /* Centralizar as imagens */
-    z-index: 1; /* Imagens laterais atrás do cabeçalho */
+    z-index: 3; /* Imagens laterais atrás do cabeçalho */
 }
 
 .container::before {
@@ -160,10 +160,11 @@ footer {
 
 /* Responsividade */
 @media (max-width: 768px) {
-    .container::before, .container::after,
-    .containerr::before, .containerr::after {
-        width: 100px; /* Aumentar a largura das imagens laterais para dispositivos móveis */
-        background-size: contain; /* Ajustar o tamanho das imagens para caber no contêiner */
+    .container::before,
+    .container::after,
+    .containerr::before,
+    .containerr::after {
+        display: none; /* Ocultar imagens laterais em dispositivos móveis */
     }
 
     nav ul {

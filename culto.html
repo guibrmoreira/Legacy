@@ -27,23 +27,21 @@
             position: absolute;
             top: 0;
             bottom: 0;
-            width: 150px;
+            width: 150px; /* Largura padrão das imagens laterais */
             background-repeat: no-repeat;
-            z-index: 1;
+            background-size: cover;
+            background-position: center;
+            z-index: 2;
         }
 
         .container.cultos::before {
             left: 0;
             background-image: url('img/Vitoria.jpg');
-            background-size: cover;
-            background-position: center;
         }
 
         .container.cultos::after {
             right: 0;
             background-image: url('img/Fe barra.jpg');
-            background-size: cover;
-            background-position: center;
         }
 
         header {
@@ -146,8 +144,7 @@
         @media (max-width: 768px) {
             .container.cultos::before,
             .container.cultos::after {
-                width: 80px; /* Ajustar largura das imagens laterais para telas pequenas */
-                background-size: contain; /* Ajustar o tamanho das imagens para caber no contêiner */
+                display: none; /* Ocultar imagens laterais em dispositivos móveis */
             }
 
             .culto-button {

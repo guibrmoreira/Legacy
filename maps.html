@@ -10,7 +10,6 @@
             margin: 0;
             padding: 0;
             background-color: #333;
-            color: white;
         }
 
         .container {
@@ -29,7 +28,7 @@
             bottom: 0;
             width: 150px; /* Largura padrão das imagens laterais */
             background-repeat: no-repeat;
-            z-index: 1;
+            z-index: 3;
         }
 
         .container.maps::before {
@@ -37,6 +36,7 @@
             background-image: url('img/Me.jpg');
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
         }
 
         .container.maps::after {
@@ -44,6 +44,7 @@
             background-image: url('img/Ju.jpg');
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
         }
 
         header {
@@ -52,7 +53,7 @@
             padding: 20px;
             text-align: center;
             position: relative;
-            z-index: 1;
+            z-index: 2;
         }
 
         header img {
@@ -66,11 +67,10 @@
             margin: 20px 0 0;
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
         }
 
         nav ul li {
-            margin: 0 10px;
+            margin: 0 20px;
         }
 
         nav a {
@@ -97,7 +97,7 @@
             margin-top: 20px;
         }
 
-        gmp-map {
+        #map {
             height: 400px; /* Ajuste conforme necessário */
             width: 100%;
             max-width: 800px; /* Limitar a largura máxima do mapa */
@@ -120,20 +120,25 @@
             z-index: 2;
         }
 
-        /* Responsividade */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
         @media (max-width: 768px) {
             .container.maps::before,
             .container.maps::after {
-                width: 80px; /* Ajustar a largura das imagens laterais para telas pequenas */
-                background-size: contain; /* Ajustar o tamanho das imagens para caber no contêiner */
+                display: none; /* Ocultar imagens laterais em dispositivos móveis */
             }
 
-            gmp-map {
+            #map {
                 height: 300px; /* Reduzir a altura do mapa em telas pequenas */
+                width: 100%;
             }
 
             .address {
-                font-size: 1em; /* Ajustar o tamanho da fonte */
+                font-size: 1em; /* Reduzir o tamanho da fonte em telas pequenas */
             }
 
             nav ul {
@@ -145,7 +150,20 @@
             }
         }
     </style>
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDm7vfoAU0sPF57e9vj-WhS8Mfe24WgFuY&callback=console.debug&libraries=maps,marker&v=beta"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDm7vfoAU0sPF57e9vj-WhS8Mfe24WgFuY&callback=initMap&libraries=places"></script>
+    <script>
+        function initMap() {
+            var location = {lat: -23.084917068481445, lng: -46.97705078125}; // Coordenadas de São Paulo
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 14,
+                center: location
+            });
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map
+            });
+        }
+    </script>
 </head>
 <body>
     <div class="container maps">
@@ -160,10 +178,8 @@
             </nav>
         </header>
         <main class="location-page">
-            <gmp-map center="-23.084917068481445,-46.97705078125" zoom="14" map-id="DEMO_MAP_ID">
-                <gmp-advanced-marker position="-23.084917068481445,-46.97705078125" title="My location"></gmp-advanced-marker>
-            </gmp-map>
-            <p class="address">Endereço: Rua Exemplo, 123, Bairro Exemplo, Cidade - SP</p>
+            <div id="map"></div>
+            <p class="address">Av. Paulo Prado, 137 - Santo Antônio, Louveira - SP, 13294-370</p>
         </main>
     </div>
     <footer>
