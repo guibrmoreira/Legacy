@@ -5,15 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cultos - Legacy</title>
     <style>
-        /* Estilo Global */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #333;
+            color: white;
         }
 
-        /* Container Principal */
         .container {
             position: relative;
             width: 100%;
@@ -23,37 +22,37 @@
             background-color: rgba(0, 0, 0, 0.7);
         }
 
-        /* Imagens Laterais */
         .container.cultos::before, .container.cultos::after {
             content: '';
             position: absolute;
             top: 0;
             bottom: 0;
-            width: 150px; /* Largura padrão das imagens laterais */
+            width: 150px;
             background-repeat: no-repeat;
-            z-index: 1; /* Imagens laterais atrás do conteúdo */
-            background-size: cover; /* Garantir que as imagens cubram toda a área */
-            background-position: center; /* Centralizar as imagens */
+            z-index: 1;
         }
 
         .container.cultos::before {
             left: 0;
             background-image: url('img/Vitoria.jpg');
+            background-size: cover;
+            background-position: center;
         }
 
         .container.cultos::after {
             right: 0;
             background-image: url('img/Fe barra.jpg');
+            background-size: cover;
+            background-position: center;
         }
 
-        /* Cabeçalho */
         header {
             background-color: rgba(0, 0, 0, 0.8);
             color: rgb(170, 0, 0);
             padding: 20px;
             text-align: center;
             position: relative;
-            z-index: 2; /* Cabeçalho acima das imagens laterais */
+            z-index: 1;
         }
 
         header img {
@@ -67,10 +66,11 @@
             margin: 20px 0 0;
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         nav ul li {
-            margin: 0 20px;
+            margin: 0 10px;
         }
 
         nav a {
@@ -89,13 +89,12 @@
             color: #ffffff;
         }
 
-        /* Página de Cultos */
         .culto-page {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 20px;
-            margin-top: 50px;
+            margin-top: 20px;
         }
 
         .buttons {
@@ -133,7 +132,6 @@
             margin-top: 10px;
         }
 
-        /* Rodapé */
         footer {
             background-color: rgba(0, 0, 0, 0.8);
             color: white;
@@ -148,22 +146,27 @@
         @media (max-width: 768px) {
             .container.cultos::before,
             .container.cultos::after {
-                width: 100px; /* Ajustar a largura das imagens laterais para telas pequenas */
-            }
-
-            .button-container {
-                width: 100%;
+                width: 80px; /* Ajustar largura das imagens laterais para telas pequenas */
+                background-size: contain; /* Ajustar o tamanho das imagens para caber no contêiner */
             }
 
             .culto-button {
-                width: 90%; /* Tornar os botões responsivos, mas não ocupando 100% */
+                width: 90%; /* Ajustar a largura dos botões para telas pequenas */
                 padding: 15px; /* Ajustar o padding para tamanhos confortáveis */
-                font-size: 1.1em; /* Ajuste do tamanho da fonte */
+                font-size: 1.1em; /* Ajustar o tamanho da fonte */
             }
 
             .button-image {
-                width: 90%; /* Ajustar a largura das imagens para não cobrir todo o espaço */
+                width: 90%; /* Ajustar a largura das imagens para telas pequenas */
                 height: auto;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 5px 0;
             }
         }
     </style>
@@ -180,25 +183,23 @@
                 </ul>
             </nav>
         </header>
-        <main>
-            <div class="culto-page">
-                <div class="buttons">
-                    <div class="button-container">
-                        <button class="culto-button">Culto de Fé</button>
-                        <img src="img/quarta.jpg" alt="Culto de Quarta" class="button-image">
-                    </div>
-                    <div class="button-container">
-                        <button class="culto-button">Culto Sábado (Legacy)</button>
-                        <img src="img/sab.jpg" alt="Culto Sábado (Legacy)" class="button-image">
-                    </div>
-                    <div class="button-container">
-                        <button class="culto-button">Domingo Culto da Família</button>
-                        <img src="img/domigo.jpg" alt="Domingo Culto da Família" class="button-image">
-                    </div>
-                    <div class="button-container">
-                        <button class="culto-button">Culto Rockets</button>
-                        <img src="img/rockets.jpg" alt="Culto Rockets" class="button-image">
-                    </div>
+        <main class="culto-page">
+            <div class="buttons">
+                <div class="button-container">
+                    <button class="culto-button">Culto de Fé</button>
+                    <img src="img/quarta.jpg" alt="Culto de Quarta" class="button-image">
+                </div>
+                <div class="button-container">
+                    <button class="culto-button">Culto Sábado (Legacy)</button>
+                    <img src="img/sab.jpg" alt="Culto Sábado (Legacy)" class="button-image">
+                </div>
+                <div class="button-container">
+                    <button class="culto-button">Domingo Culto da Família</button>
+                    <img src="img/domigo.jpg" alt="Domingo Culto da Família" class="button-image">
+                </div>
+                <div class="button-container">
+                    <button class="culto-button">Culto Rockets</button>
+                    <img src="img/rockets.jpg" alt="Culto Rockets" class="button-image">
                 </div>
             </div>
         </main>

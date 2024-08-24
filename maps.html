@@ -5,15 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Local - Legacy</title>
     <style>
-        /* Estilo Global */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #333;
+            color: white;
         }
 
-        /* Container Principal */
         .container {
             position: relative;
             width: 100%;
@@ -23,7 +22,6 @@
             background-color: rgba(0, 0, 0, 0.7);
         }
 
-        /* Imagens Laterais */
         .container.maps::before, .container.maps::after {
             content: '';
             position: absolute;
@@ -31,29 +29,30 @@
             bottom: 0;
             width: 150px; /* Largura padrão das imagens laterais */
             background-repeat: no-repeat;
-            z-index: 1; /* Imagens laterais atrás do conteúdo */
-            background-size: cover; /* Garantir que as imagens cubram toda a área */
-            background-position: center; /* Centralizar as imagens */
+            z-index: 1;
         }
 
         .container.maps::before {
             left: 0;
             background-image: url('img/Me.jpg');
+            background-size: cover;
+            background-position: center;
         }
 
         .container.maps::after {
             right: 0;
             background-image: url('img/Ju.jpg');
+            background-size: cover;
+            background-position: center;
         }
 
-        /* Cabeçalho */
         header {
             background-color: rgba(0, 0, 0, 0.8);
             color: rgb(170, 0, 0);
             padding: 20px;
             text-align: center;
             position: relative;
-            z-index: 2; /* Cabeçalho acima das imagens laterais */
+            z-index: 1;
         }
 
         header img {
@@ -67,10 +66,11 @@
             margin: 20px 0 0;
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         nav ul li {
-            margin: 0 20px;
+            margin: 0 10px;
         }
 
         nav a {
@@ -89,7 +89,6 @@
             color: #ffffff;
         }
 
-        /* Página de Localização */
         .location-page {
             display: flex;
             flex-direction: column;
@@ -111,7 +110,6 @@
             text-align: center;
         }
 
-        /* Rodapé */
         footer {
             background-color: rgba(0, 0, 0, 0.8);
             color: white;
@@ -122,27 +120,28 @@
             z-index: 2;
         }
 
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-
         /* Responsividade */
         @media (max-width: 768px) {
             .container.maps::before,
             .container.maps::after {
-                width: 60px; /* Reduzir a largura das imagens laterais em telas pequenas */
+                width: 80px; /* Ajustar a largura das imagens laterais para telas pequenas */
                 background-size: contain; /* Ajustar o tamanho das imagens para caber no contêiner */
             }
 
             gmp-map {
                 height: 300px; /* Reduzir a altura do mapa em telas pequenas */
-                width: 100%;
             }
 
             .address {
-                font-size: 1em; /* Reduzir o tamanho da fonte em telas pequenas */
+                font-size: 1em; /* Ajustar o tamanho da fonte */
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 5px 0;
             }
         }
     </style>
