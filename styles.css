@@ -47,6 +47,7 @@ nav ul {
     margin: 0;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 nav ul li {
@@ -217,12 +218,13 @@ p.info {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url('img/Ju.jpg'); 
+    background-image: url('img/Ju.jpg');
     background-size: cover;
     background-position: top center;
     background-repeat: no-repeat;
     z-index: 4;
 }
+
 .location-page {
     display: flex;
     justify-content: center;
@@ -235,6 +237,29 @@ p.info {
     flex: 2;
     height: 400px;
     background-color: grey;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container::before, .container::after,
+    .containerr::before, .containerr::after,
+    .container.maps::before, .container.maps::after {
+        width: 100px;
+        background-size: contain;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .leaders {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .leaders img {
+        width: 150px;
+    }
 }
 
 /* Rodapé */
