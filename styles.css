@@ -23,7 +23,7 @@ header {
     padding: 20px;
     text-align: center;
     position: relative;
-    z-index: 1; 
+    z-index: 2; /* Garantir que o cabeçalho esteja sobre as imagens laterais */
 }
 
 header img {
@@ -34,7 +34,7 @@ header img {
 
 header a {
     display: inline-block;
-    z-index: 11;
+    z-index: 3;
 }
 
 nav {
@@ -77,11 +77,11 @@ nav a:hover {
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 100px; /* Largura das imagens laterais */
+    width: 150px; /* Aumentar a largura para dispositivos móveis */
     background-repeat: no-repeat;
     background-size: cover; /* Garantir que as imagens cubram toda a área */
     background-position: center; /* Centralizar as imagens */
-    z-index: 3; /* Imagens laterais atrás do cabeçalho */
+    z-index: 1; /* Imagens laterais atrás do cabeçalho */
 }
 
 .container::before {
@@ -162,7 +162,7 @@ footer {
 @media (max-width: 768px) {
     .container::before, .container::after,
     .containerr::before, .containerr::after {
-        width: 50px; /* Ajustar largura das imagens laterais para telas pequenas */
+        width: 100px; /* Aumentar a largura das imagens laterais para dispositivos móveis */
         background-size: contain; /* Ajustar o tamanho das imagens para caber no contêiner */
     }
 

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Local - Legacy</title>
     <style>
+        /* Estilo Global */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -12,6 +13,7 @@
             background-color: #333;
         }
 
+        /* Container Principal */
         .container {
             position: relative;
             width: 100%;
@@ -21,6 +23,7 @@
             background-color: rgba(0, 0, 0, 0.7);
         }
 
+        /* Imagens Laterais */
         .container.maps::before, .container.maps::after {
             content: '';
             position: absolute;
@@ -28,34 +31,29 @@
             bottom: 0;
             width: 150px; /* Largura padrão das imagens laterais */
             background-repeat: no-repeat;
-            z-index: 1;
+            z-index: 1; /* Imagens laterais atrás do conteúdo */
+            background-size: cover; /* Garantir que as imagens cubram toda a área */
+            background-position: center; /* Centralizar as imagens */
         }
 
         .container.maps::before {
             left: 0;
             background-image: url('img/Me.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            z-index: 4;
         }
 
         .container.maps::after {
             right: 0;
             background-image: url('img/Ju.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            z-index: 4;
         }
 
+        /* Cabeçalho */
         header {
             background-color: rgba(0, 0, 0, 0.8);
             color: rgb(170, 0, 0);
             padding: 20px;
             text-align: center;
             position: relative;
-            z-index: 1;
+            z-index: 2; /* Cabeçalho acima das imagens laterais */
         }
 
         header img {
@@ -91,6 +89,7 @@
             color: #ffffff;
         }
 
+        /* Página de Localização */
         .location-page {
             display: flex;
             flex-direction: column;
@@ -112,6 +111,7 @@
             text-align: center;
         }
 
+        /* Rodapé */
         footer {
             background-color: rgba(0, 0, 0, 0.8);
             color: white;
@@ -128,6 +128,7 @@
             padding: 0;
         }
 
+        /* Responsividade */
         @media (max-width: 768px) {
             .container.maps::before,
             .container.maps::after {

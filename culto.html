@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cultos - Legacy</title>
     <style>
+        /* Estilo Global */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -12,6 +13,7 @@
             background-color: #333;
         }
 
+        /* Container Principal */
         .container {
             position: relative;
             width: 100%;
@@ -21,41 +23,37 @@
             background-color: rgba(0, 0, 0, 0.7);
         }
 
+        /* Imagens Laterais */
         .container.cultos::before, .container.cultos::after {
             content: '';
             position: absolute;
             top: 0;
             bottom: 0;
-            width: 150px;
+            width: 150px; /* Largura padrão das imagens laterais */
             background-repeat: no-repeat;
-            z-index: 1;
+            z-index: 1; /* Imagens laterais atrás do conteúdo */
+            background-size: cover; /* Garantir que as imagens cubram toda a área */
+            background-position: center; /* Centralizar as imagens */
         }
 
         .container.cultos::before {
             left: 0;
             background-image: url('img/Vitoria.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            z-index: 4;
         }
 
         .container.cultos::after {
             right: 0;
             background-image: url('img/Fe barra.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            z-index: 4;
         }
 
+        /* Cabeçalho */
         header {
             background-color: rgba(0, 0, 0, 0.8);
             color: rgb(170, 0, 0);
             padding: 20px;
             text-align: center;
             position: relative;
-            z-index: 1;
+            z-index: 2; /* Cabeçalho acima das imagens laterais */
         }
 
         header img {
@@ -91,6 +89,7 @@
             color: #ffffff;
         }
 
+        /* Página de Cultos */
         .culto-page {
             display: flex;
             flex-direction: column;
@@ -134,6 +133,7 @@
             margin-top: 10px;
         }
 
+        /* Rodapé */
         footer {
             background-color: rgba(0, 0, 0, 0.8);
             color: white;
@@ -144,16 +144,11 @@
             z-index: 2;
         }
 
-        .container.cultos::before,
-        .container.cultos::after {
-            width: 120px; /* Ajustar a largura para algo intermediário */
-            background-size: cover; /* Manter o tamanho de cobertura para uma aparência mais consistente */
-        }
-
+        /* Responsividade */
         @media (max-width: 768px) {
             .container.cultos::before,
             .container.cultos::after {
-                width: 80px; /* Ajuste a largura para telas pequenas */
+                width: 100px; /* Ajustar a largura das imagens laterais para telas pequenas */
             }
 
             .button-container {
@@ -167,7 +162,7 @@
             }
 
             .button-image {
-                width: 90%; /* Ajuste a largura das imagens para não cobrir todo o espaço */
+                width: 90%; /* Ajustar a largura das imagens para não cobrir todo o espaço */
                 height: auto;
             }
         }
