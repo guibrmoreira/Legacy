@@ -103,6 +103,7 @@ nav a:hover {
     background-image: url('img/leandro.jpg');
     background-size: cover;
     background-position: top center;
+    z-index: 3;
 }
 
 .containerr::after {
@@ -110,6 +111,7 @@ nav a:hover {
     background-image: url('img/amanda.jpg');
     background-size: cover;
     background-position: top center;
+    z-index: 3;
 }
 
 /* Estilo Principal */
@@ -171,6 +173,7 @@ p.info {
     background-image: url('img/Me.jpg');
     background-size: cover;
     background-position: top center;
+    z-index: 3;
 }
 
 .container.maps::after {
@@ -178,6 +181,7 @@ p.info {
     background-image: url('img/Ju.jpg'); 
     background-size: cover;
     background-position: top center;
+    z-index: 3;
 }
 
 .location-page {
