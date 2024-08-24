@@ -157,49 +157,6 @@ p.info {
     border-radius: 50px;
 }
 
-/* Página de Localização */
-.container.maps::before, .container.maps::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 150px;
-    background-repeat: no-repeat;
-    z-index: 1;
-}
-
-.container.maps::before {
-    left: 0;
-    background-image: url('img/Me.jpg');
-    background-size: cover;
-    background-position: top center;
-    z-index: 3;
-}
-
-.container.maps::after {
-    right: 0;
-    background-image: url('img/Ju.jpg'); 
-    background-size: cover;
-    background-position: top center;
-    z-index: 3;
-}
-
-.location-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    margin-top: 20px;
-    flex-wrap: wrap;
-}
-
-.location-page .map {
-    flex: 2;
-    height: 400px;
-    background-color: grey;
-    width: 100%;
-}
-
 /* Rodapé */
 footer {
     background-color: rgba(0, 0, 0, 0.8);
@@ -214,8 +171,7 @@ footer {
 /* Responsividade */
 @media (max-width: 768px) {
     .container::before, .container::after,
-    .containerr::before, .containerr::after,
-    .container.maps::before, .container.maps::after {
+    .containerr::before, .containerr::after {
         display: none;
     }
 
@@ -230,9 +186,5 @@ footer {
 
     main h2 {
         font-size: 2em;
-    }
-
-    .location-page .map {
-        height: 300px;
     }
 }

@@ -26,7 +26,7 @@
             position: absolute;
             top: 0;
             bottom: 0;
-            width: 150px;
+            width: 150px; /* Largura padrão das imagens laterais */
             background-repeat: no-repeat;
             z-index: 1;
         }
@@ -132,18 +132,15 @@
             margin: 0;
             padding: 0;
         }
-.container.maps::before,
-.container.maps::after {
-    width: 100px; /* Reduzir a largura para telas menores */
-    background-size: contain; /* Ajustar o tamanho da imagem para caber no contêiner */
-}
 
-@media (max-width: 768px) {
-    .container.maps::before,
-    .container.maps::after {
-        width: 60px; /* Reduzir ainda mais para telas bem pequenas */
-    }
-}
+        /* Ajuste para telas menores */
+        @media (max-width: 768px) {
+            .container.maps::before,
+            .container.maps::after {
+                width: 60px; /* Reduzir a largura das imagens laterais em telas pequenas */
+                background-size: contain; /* Ajustar o tamanho das imagens para caber no contêiner */
+            }
+        }
     </style>
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDm7vfoAU0sPF57e9vj-WhS8Mfe24WgFuY&callback=console.debug&libraries=maps,marker&v=beta"></script>
 </head>

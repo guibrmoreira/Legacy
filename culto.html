@@ -150,30 +150,30 @@
             width: 100%;
             z-index: 2;
         }
- .container.cultos::before,
+        .container.cultos::before,
 .container.cultos::after {
-    width: 100px; /* Reduzir a largura para telas menores */
-    background-size: contain; /* Ajustar o tamanho da imagem para caber no contêiner */
+    width: 120px; /* Ajuste a largura para algo intermediário */
+    background-size: cover; /* Manter o tamanho de cobertura para uma aparência mais consistente */
 }
 
 @media (max-width: 768px) {
     .container.cultos::before,
     .container.cultos::after {
-        width: 60px; /* Reduzir ainda mais para telas bem pequenas */
+        width: 80px; /* Um pouco maior para telas pequenas */
     }
 
     .button-container {
-        width: 100%; /* Garantir que os botões se alinhem corretamente em telas menores */
+        width: 100%;
     }
 
     .culto-button {
-        width: 100%; /* Tornar os botões responsivos */
-        padding: 10px;
-        font-size: 1em; /* Ajustar o tamanho do texto dos botões */
+        width: 90%; /* Tornar os botões responsivos, mas não ocupando 100% */
+        padding: 15px; /* Mantém o tamanho dos botões confortável */
+        font-size: 1.1em; /* Um pouco maior que o anterior */
     }
 
     .button-image {
-        width: 100%; /* Ajustar a largura das imagens */
+        width: 90%; /* Ajustar a largura das imagens, sem cobrir todo o espaço */
         height: auto;
     }
 }
