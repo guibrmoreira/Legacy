@@ -132,6 +132,18 @@
             margin: 0;
             padding: 0;
         }
+.container.maps::before,
+.container.maps::after {
+    width: 100px; /* Reduzir a largura para telas menores */
+    background-size: contain; /* Ajustar o tamanho da imagem para caber no contêiner */
+}
+
+@media (max-width: 768px) {
+    .container.maps::before,
+    .container.maps::after {
+        width: 60px; /* Reduzir ainda mais para telas bem pequenas */
+    }
+}
     </style>
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDm7vfoAU0sPF57e9vj-WhS8Mfe24WgFuY&callback=console.debug&libraries=maps,marker&v=beta"></script>
 </head>

@@ -150,6 +150,34 @@
             width: 100%;
             z-index: 2;
         }
+ .container.cultos::before,
+.container.cultos::after {
+    width: 100px; /* Reduzir a largura para telas menores */
+    background-size: contain; /* Ajustar o tamanho da imagem para caber no contêiner */
+}
+
+@media (max-width: 768px) {
+    .container.cultos::before,
+    .container.cultos::after {
+        width: 60px; /* Reduzir ainda mais para telas bem pequenas */
+    }
+
+    .button-container {
+        width: 100%; /* Garantir que os botões se alinhem corretamente em telas menores */
+    }
+
+    .culto-button {
+        width: 100%; /* Tornar os botões responsivos */
+        padding: 10px;
+        font-size: 1em; /* Ajustar o tamanho do texto dos botões */
+    }
+
+    .button-image {
+        width: 100%; /* Ajustar a largura das imagens */
+        height: auto;
+    }
+}
+
     </style>
 </head>
 <body>
