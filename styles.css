@@ -217,13 +217,12 @@ p.info {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url('img/Ju.jpg');
+    background-image: url('img/Ju.jpg'); 
     background-size: cover;
     background-position: top center;
     background-repeat: no-repeat;
     z-index: 4;
 }
-
 .location-page {
     display: flex;
     justify-content: center;
