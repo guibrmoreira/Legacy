@@ -7,7 +7,7 @@ body {
 }
 
 /* Container Principal */
-.container {
+.container, .containerr {
     position: relative;
     width: 100%;
     min-height: 100vh;
@@ -70,8 +70,9 @@ nav a:hover {
     color: #ffffff;
 }
 
-/* Página Inicial */
-.container::before, .container::after {
+/* Página Principal (Imagens Laterais) */
+.container::before, .container::after,
+.containerr::before, .containerr::after {
     content: '';
     position: absolute;
     top: 0;
@@ -83,26 +84,30 @@ nav a:hover {
 
 .container::before {
     left: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     background-image: url('img/Gui.jpg'), url('img/Joao.jpg'), url('img/FeBarra.jpg');
     background-size: cover;
     background-position: top center, center center, bottom center;
-    background-repeat: no-repeat;
-    z-index: 4;
 }
 
 .container::after {
     right: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     background-image: url('img/Ka.jpg'), url('img/Brenda.jpg'), url('img/Du.jpg');
     background-size: cover;
     background-position: top center, center center, bottom center;
-    background-repeat: no-repeat;
-    z-index: 4;
+}
+
+.containerr::before {
+    left: 0;
+    background-image: url('img/leandro.jpg');
+    background-size: cover;
+    background-position: top center;
+}
+
+.containerr::after {
+    right: 0;
+    background-image: url('img/amanda.jpg');
+    background-size: cover;
+    background-position: top center;
 }
 
 /* Estilo Principal */
@@ -134,49 +139,6 @@ p.info {
 }
 
 /* Página de Liderança */
-.containerr {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    padding: 20px;
-    box-sizing: border-box;
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
-.containerr::before, .containerr::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 150px;
-    background-repeat: no-repeat;
-    z-index: 1;
-}
-
-.containerr::before {
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-image: url('img/leandro.jpg');
-    background-size: cover;
-    background-position: top center;
-    background-repeat: no-repeat;
-    z-index: 4;
-}
-
-.containerr::after {
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-image: url('img/amanda.jpg');
-    background-size: cover;
-    background-position: top center;
-    background-repeat: no-repeat;
-    z-index: 4;
-}
-
 .leaders {
     display: flex;
     justify-content: center;
@@ -204,26 +166,16 @@ p.info {
 
 .container.maps::before {
     left: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     background-image: url('img/Me.jpg');
     background-size: cover;
     background-position: top center;
-    background-repeat: no-repeat;
-    z-index: 4;
 }
 
 .container.maps::after {
     right: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     background-image: url('img/Ju.jpg'); 
     background-size: cover;
     background-position: top center;
-    background-repeat: no-repeat;
-    z-index: 4;
 }
 
 .location-page {
@@ -232,7 +184,7 @@ p.info {
     align-items: center;
     gap: 20px;
     margin-top: 20px;
-    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .location-page .map {
