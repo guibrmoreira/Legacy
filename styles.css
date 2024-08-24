@@ -51,7 +51,7 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 20px;
+    margin: 10px 20px;
 }
 
 nav a {
@@ -182,6 +182,7 @@ p.info {
     justify-content: center;
     gap: 170px;
     margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 .leaders img {
@@ -218,7 +219,7 @@ p.info {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url('img/Ju.jpg');
+    background-image: url('img/Ju.jpg'); 
     background-size: cover;
     background-position: top center;
     background-repeat: no-repeat;
@@ -231,35 +232,14 @@ p.info {
     align-items: center;
     gap: 20px;
     margin-top: 20px;
+    flex-direction: column;
 }
 
 .location-page .map {
     flex: 2;
     height: 400px;
     background-color: grey;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .container::before, .container::after,
-    .containerr::before, .containerr::after,
-    .container.maps::before, .container.maps::after {
-        width: 100px;
-        background-size: contain;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    .leaders {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .leaders img {
-        width: 150px;
-    }
+    width: 100%;
 }
 
 /* Rodapé */
@@ -271,4 +251,30 @@ footer {
     position: relative;
     width: 100%;
     z-index: 2;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container::before, .container::after,
+    .containerr::before, .containerr::after,
+    .container.maps::before, .container.maps::after {
+        display: none;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    .leaders {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    main h2 {
+        font-size: 2em;
+    }
+
+    .location-page .map {
+        height: 300px;
+    }
 }
