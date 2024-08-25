@@ -1,0 +1,191 @@
+/* Estilo Global */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Container Principal */
+.container, .containerr {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Cabeçalho */
+header {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgb(170, 0, 0);
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 2; /* Garantir que o cabeçalho esteja sobre as imagens laterais */
+}
+
+header img {
+    vertical-align: middle;
+    height: 160px;
+    cursor: pointer;
+}
+
+header a {
+    display: inline-block;
+    z-index: 3;
+}
+
+nav {
+    margin-top: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 10px 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 3px solid white;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+    background-color: rgb(255, 0, 0);
+    color: #ffffff;
+}
+
+/* Imagens Laterais */
+.container::before, .container::after,
+.containerr::before, .containerr::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 150px; /* Aumentar a largura para dispositivos móveis */
+    background-repeat: no-repeat;
+    background-size: cover; /* Garantir que as imagens cubram toda a área */
+    background-position: center; /* Centralizar as imagens */
+    z-index: 3; /* Imagens laterais atrás do cabeçalho */
+}
+
+.container::before {
+    left: 0;
+    background-image: url('img/Gui.jpg');
+}
+
+.container::after {
+    right: 0;
+    background-image: url('img/Ka.jpg');
+}
+
+.containerr::before {
+    left: 0;
+    background-image: url('img/leandro.jpg');
+}
+
+.containerr::after {
+    right: 0;
+    background-image: url('img/amanda.jpg');
+}
+
+/* Estilo Principal */
+main {
+    font-size: 1em;
+    background-color: transparent;
+    margin-top: 20px;
+    font-family: Verdana, sans-serif;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    z-index: 2;
+    position: relative;
+}
+
+main h2 {
+    font-size: 2.5em;
+    margin: 0 0 20px 0;
+}
+
+p.info {
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    font-size: 1.2em;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 80%;
+}
+
+/* Página de Liderança */
+.leaders {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.leaders img {
+    width: 150px; /* Ajustar para uma largura mais adequada */
+    height: auto;
+    border-radius: 50%;
+}
+
+/* Rodapé */
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container::before,
+    .container::after,
+    .containerr::before,
+    .containerr::after {
+        display: none; /* Ocultar imagens laterais em dispositivos móveis */
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin: 0;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .leaders {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    main h2 {
+        font-size: 2em;
+    }
+
+    p.info {
+        font-size: 1em;
+    }
+}

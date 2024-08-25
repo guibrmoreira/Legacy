@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local - Legacy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            color: white;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .container.maps::before, .container.maps::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 150px; /* Largura padrão das imagens laterais */
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            z-index: 2;
+        }
+
+        .container.maps::before {
+            left: 0;
+            background-image: url('img/Me.jpg');
+        }
+
+        .container.maps::after {
+            right: 0;
+            background-image: url('img/juninho.jpg');
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: rgb(170, 0, 0);
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        header img {
+            vertical-align: middle;
+            height: 160px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 3px solid white;
+            border-radius: 5px;
+            background-color: rgba(51, 51, 51, 0.6);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: rgb(241, 9, 9);
+            color: #ffffff;
+        }
+
+        .location-page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        #map {
+            height: 400px; /* Ajuste conforme necessário */
+            width: 100%;
+            max-width: 800px; /* Limitar a largura máxima do mapa */
+            border-radius: 10px; /* Adicionar bordas arredondadas ao mapa */
+        }
+
+        .address {
+            color: red;
+            font-size: 1.2em;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            width: 100%;
+            z-index: 2;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .container.maps::before,
+            .container.maps::after {
+                display: none; /* Ocultar imagens laterais em dispositivos móveis */
+            }
+
+            #map {
+                height: 300px; /* Reduzir a altura do mapa em telas pequenas */
+                width: 100%;
+            }
+
+            .address {
+                font-size: 1em; /* Reduzir o tamanho da fonte em telas pequenas */
+            }
+
+            nav ul {
+                flex-direction: column;
+                padding: 0; /* Remove padding para itens de lista em dispositivos móveis */
+            }
+
+            nav ul li {
+                margin: 10px 0; /* Adiciona mais espaço entre os itens de lista */
+            }
+
+            nav a {
+                padding: 15px; /* Ajusta o padding dos botões para maior conforto */
+                margin: 10px 0; /* Adiciona espaço vertical entre os botões */
+            }
+        }
+    </style>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDm7vfoAU0sPF57e9vj-WhS8Mfe24WgFuY&callback=initMap&libraries=places"></script>
+    <script>
+        function initMap() {
+            var location = {lat: -23.084917068481445, lng: -46.97705078125}; // Coordenadas de São Paulo
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 14,
+                center: location
+            });
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="container maps">
+        <header>
+            <a href="index.html"><img src="img/Legacy_Logotype_Red.png" alt="Legacy"></a>
+            <nav>
+                <ul>
+                    <li><a href="leaders.html">Líderes</a></li>
+                    <li><a href="maps.html">Local</a></li>
+                    <li><a href="culto.html">Cultos</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="location-page">
+            <div id="map"></div>
+            <p class="address">Av. Paulo Prado, 137 - Santo Antônio, Louveira - SP, 13294-370</p>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2024 Legacy. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
