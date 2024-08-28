@@ -23,7 +23,7 @@ header {
     padding: 20px;
     text-align: center;
     position: relative;
-    z-index: 2; /* Garantir que o cabeçalho esteja sobre as imagens laterais */
+    z-index: 2; 
 }
 
 header img {
@@ -133,19 +133,28 @@ p.info {
 }
 
 /* Página de Liderança */
-.leaders {
+.leaders, .ativados {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    align-items: center;
+    gap: 10px; 
     margin-top: 20px;
     flex-wrap: wrap;
+    padding: 10px;
+    box-sizing: border-box;
+    z-index: 2;
 }
-
-.leaders img {
-    width: 150px; /* Ajustar para uma largura mais adequada */
-    height: auto;
-    border-radius: 50%;
+.leaders img, .ativados img {
+    width: 100px; /* Reduzir o tamanho das imagens */
+    height: 200px; /* Garantir que as imagens tenham altura fixa */
+    border-radius: 30%;
+    object-fit: cover; 
+    z-index: 2;
+    position: relative;
 }
+ .leaders p, .ativados p{
+     top: 100px;
+ } 
 
 /* Rodapé */
 footer {
@@ -187,5 +196,14 @@ footer {
 
     p.info {
         font-size: 1em;
+    }
+    .leaders, .ativados {
+        flex-direction: column;
+        gap: 20px; /* Aumentar o espaço entre as imagens em telas menores */
+    }
+
+    .leaders img, .ativados img {
+        width: 80px; /* Reduzir o tamanho das imagens em telas menores */
+        height: 80px;
     }
 }
