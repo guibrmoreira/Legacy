@@ -23,7 +23,7 @@ header {
     padding: 20px;
     text-align: center;
     position: relative;
-    z-index: 2; 
+    z-index: 2;
 }
 
 header img {
@@ -81,8 +81,8 @@ nav a:hover {
     bottom: 0;
     width: 150px; /* Ajuste o tamanho conforme necessário */
     background-repeat: no-repeat;
-    background-size: cover; /* Garantir que as imagens cubram toda a área */
-    background-position: center; /* Centralizar as imagens */
+    background-size: cover;
+    background-position: center;
     z-index: 3; /* Imagens laterais atrás do cabeçalho */
 }
 
@@ -139,6 +139,12 @@ main {
     position: relative;
 }
 
+main h1 {
+    font-size: 2em;
+    color: rgb(170, 0, 0); 
+    margin-bottom: 20px;
+}
+
 main h2 {
     font-size: 2.5em;
     margin: 0 0 20px 0;
@@ -154,30 +160,60 @@ p.info {
     max-width: 80%;
 }
 
-/* Página de Liderança */
-.leaders, .ativados {
+/* Página de Liderança e Ativados */
+.leaders {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px; 
-    margin-top: 20px;
     flex-wrap: wrap;
+    gap: 20px; 
+    justify-content: center;
+    margin-top: 20px;
     padding: 10px;
     box-sizing: border-box;
     z-index: 2;
 }
 
-.leaders img, .ativados img {
-    width: 100px; /* Reduzir o tamanho das imagens */
-    height: 200px; /* Garantir que as imagens tenham altura fixa */
-    border-radius: 30%;
-    object-fit: cover; 
-    z-index: 2;
-    position: relative;
+.leader-item {
+    text-align: center;
 }
 
-.leaders p, .ativados p {
-    top: 100px;
+.leader-item img {
+    width: 150px; 
+    height: 150px;
+    border-radius: 30%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+.leader-item p {
+    margin: 5px 0 0;
+    color: red; 
+    font-size: 1em;
+}
+
+.ativados {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Ajustar tamanho das colunas */
+    gap: 20px; /* Espaço entre as imagens */
+    max-width: 1200px; /* Largura máxima da grade */
+    margin: 20px auto; /
+}
+
+.ativado-item {
+    text-align: center;
+}
+
+.ativado-item img {
+    width: 150px; /* Largura fixa para todas as imagens */
+    height: 150px; /* Altura fixa para todas as imagens */
+    border-radius: 10px;
+    object-fit: cover; /* Manter a proporção das imagens */
+}
+
+.ativado-item p {
+    margin: 5px 0 0;
+    color: red; /* Nome em vermelho */
+    font-size: 1em;
 }
 
 /* Página de Cultos */
@@ -234,11 +270,6 @@ p.info {
     max-width: 800px;
     border-radius: 10px;
 }
-.maps-page .map-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
 
 .maps-page .address {
     color: red;
@@ -280,7 +311,21 @@ footer {
 
     .leaders {
         flex-direction: column;
-        gap: 30px;
+        align-items: center; /* Centralizar as imagens em telas menores */
+    }
+
+    .leaders img {
+        width: 120px; /* Ajustar o tamanho das imagens para telas menores */
+        height: 120px;
+    }
+
+    .ativados {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Ajustar para telas menores */
+    }
+
+    .ativados img {
+        width: 120px; /* Ajustar o tamanho das imagens para telas menores */
+        height: 120px;
     }
 
     main h2 {
@@ -289,16 +334,6 @@ footer {
 
     p.info {
         font-size: 1em;
-    }
-
-    .leaders, .ativados {
-        flex-direction: column;
-        gap: 20px; /* Aumentar o espaço entre as imagens em telas menores */
-    }
-
-    .leaders img, .ativados img {
-        width: 80px; /* Reduzir o tamanho das imagens em telas menores */
-        height: 80px;
     }
 
     .cultos-page .culto-button {
