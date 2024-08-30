@@ -176,14 +176,14 @@ footer {
         display: none; /* Ocultar imagens laterais em dispositivos móveis */
     }
 
-    nav ul {
-        flex-direction: column;
-        margin: 0;
-    }
+   nav ul {
+                flex-direction: column;
+                padding: 0; /* Remove padding para itens de lista em dispositivos móveis */
+            }
 
-    nav ul li {
-        margin: 5px 0;
-    }
+            nav ul li {
+                margin: 20px 0; /* Adiciona mais espaço entre os itens de lista */
+            }
 
     .leaders {
         flex-direction: column;
