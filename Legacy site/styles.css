@@ -72,12 +72,14 @@ nav a:hover {
 
 /* Imagens Laterais */
 .container::before, .container::after,
-.containerr::before, .containerr::after {
+.containerr::before, .containerr::after,
+.container.cultos-page::before, .container.cultos-page::after,
+.maps-page::before, .maps-page::after {
     content: '';
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 150px; /* Aumentar a largura para dispositivos móveis */
+    width: 150px; /* Ajuste o tamanho conforme necessário */
     background-repeat: no-repeat;
     background-size: cover; /* Garantir que as imagens cubram toda a área */
     background-position: center; /* Centralizar as imagens */
@@ -102,6 +104,26 @@ nav a:hover {
 .containerr::after {
     right: 0;
     background-image: url('img/amanda.jpg');
+}
+
+.container.cultos-page::before {
+    left: 0;
+    background-image: url('img/Vitoria.jpg');
+} 
+
+.container.cultos-page::after {
+    right: 0;
+    background-image: url('img/Fe barra.jpg');
+}
+
+.maps-page::before {
+    left: 0;
+    background-image: url('img/Juninho.jpg'); 
+}
+
+.maps-page::after {
+    right: 0;
+    background-image: url('img/Me.jpg'); 
 }
 
 /* Estilo Principal */
@@ -144,6 +166,7 @@ p.info {
     box-sizing: border-box;
     z-index: 2;
 }
+
 .leaders img, .ativados img {
     width: 100px; /* Reduzir o tamanho das imagens */
     height: 200px; /* Garantir que as imagens tenham altura fixa */
@@ -152,9 +175,77 @@ p.info {
     z-index: 2;
     position: relative;
 }
- .leaders p, .ativados p{
-     top: 100px;
- } 
+
+.leaders p, .ativados p {
+    top: 100px;
+}
+
+/* Página de Cultos */
+.cultos-page .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.cultos-page .button-container {
+    text-align: center;
+    width: 100%; /* Garantir que cada botão ocupe a largura disponível */
+    max-width: 300px; /* Largura máxima para os containers de botões */
+}
+
+.cultos-page .culto-button {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    background-color: rgba(241, 9, 9, 0.8);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    display: block;
+    width: 100%; /* Botões ocupam a largura total do container */
+}
+
+.cultos-page .culto-button:hover {
+    background-color: rgb(170, 0, 0);
+    transform: scale(1.05);
+}
+
+.cultos-page .button-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 10px;
+    max-width: 100%; /* Garantir que a imagem não exceda a largura do container */
+}
+
+/* Página de Localização */
+.maps-page .map-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.maps-page iframe {
+    border: 0;
+    width: 100%;
+    height: 400px; /* Ajuste conforme necessário */
+    max-width: 800px;
+    border-radius: 10px;
+}
+.maps-page .map-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.maps-page .address {
+    color: red;
+    text-align: center;
+    font-size: 1.2em; /* Ajuste o tamanho da fonte conforme necessário */
+    margin-top: 10px;
+}
 
 /* Rodapé */
 footer {
@@ -172,18 +263,20 @@ footer {
     .container::before,
     .container::after,
     .containerr::before,
-    .containerr::after {
+    .containerr::after,
+    .container.cultos-page::before,
+    .container.cultos-page::after {
         display: none; /* Ocultar imagens laterais em dispositivos móveis */
     }
 
-   nav ul {
-                flex-direction: column;
-                padding: 0; /* Remove padding para itens de lista em dispositivos móveis */
-            }
+    nav ul {
+        flex-direction: column;
+        padding: 0; /* Remove padding para itens de lista em dispositivos móveis */
+    }
 
-            nav ul li {
-                margin: 20px 0; /* Adiciona mais espaço entre os itens de lista */
-            }
+    nav ul li {
+        margin: 20px 0; /* Adiciona mais espaço entre os itens de lista */
+    }
 
     .leaders {
         flex-direction: column;
@@ -197,6 +290,7 @@ footer {
     p.info {
         font-size: 1em;
     }
+
     .leaders, .ativados {
         flex-direction: column;
         gap: 20px; /* Aumentar o espaço entre as imagens em telas menores */
@@ -205,5 +299,16 @@ footer {
     .leaders img, .ativados img {
         width: 80px; /* Reduzir o tamanho das imagens em telas menores */
         height: 80px;
+    }
+
+    .cultos-page .culto-button {
+        width: 100%; /* Ajustar a largura dos botões para telas pequenas */
+        padding: 15px; /* Ajustar o padding para tamanhos confortáveis */
+        font-size: 1.1em; /* Ajustar o tamanho da fonte */
+    }
+
+    .cultos-page .button-image {
+        width: 100%; /* Ajustar a largura das imagens para telas pequenas */
+        height: auto;
     }
 }
