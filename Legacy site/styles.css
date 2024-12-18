@@ -288,18 +288,24 @@ footer {
     width: 100%;
     z-index: 2;
 }
-
-/*video */
+/* Ajuste para garantir que o vídeo fique visível */
 .video-container {
-    text-align: center;
-    margin: 20px 0;
+    position: relative; /* Mantém o vídeo posicionado corretamente */
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    height: auto; /* Permite que a altura seja dinâmica */
+    z-index: 1; /* Certifique-se de que o víde o esteja acima do texto */
 }
 
-.video-container video,
-.video-container iframe {
-    max-width: 100%;
-    height: auto;
+.video-container iframe,
+.video-container video {
+    width: 100%;
+    height: 100%;
+    border: none; /* Remove bordas */
+    display: block; /* Garante que o vídeo se comporte como um bloco */
 }
+
 
 
 
