@@ -91,6 +91,8 @@ select id, 'Wesley' from auth.users where email = 'email-do-wesley@exemplo.com';
 
 ## Deploy
 
+**No ar em: https://barbeariafagundes.vercel.app**
+
 Qualquer host de estáticos serve (Vercel, Netlify, Cloudflare Pages):
 
 ```bash
