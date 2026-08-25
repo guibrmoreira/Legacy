@@ -79,10 +79,11 @@ com o e-mail correto) e atualize o `.env`.
 ## Acesso administrativo
 
 - URL: `/admin/login`
-- Usuário inicial: `guilherme@biasiengenharia.com.br` (a senha foi entregue em
-  separado — **troque em Configurações → Conta** no primeiro acesso)
-- Para adicionar outro admin (ex.: o Wesley): crie o usuário em
-  Authentication → Users no Supabase e rode:
+- O login é o usuário cadastrado em **Authentication → Users** no Supabase que
+  também consta na tabela `barber_admins`. As credenciais não ficam no
+  repositório; a senha pode ser trocada em **Configurações → Conta** no painel.
+- Para adicionar outro admin: crie o usuário em Authentication → Users no
+  Supabase e rode:
 
 ```sql
 insert into public.barber_admins (user_id, display_name)
