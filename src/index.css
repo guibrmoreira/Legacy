@@ -1,0 +1,181 @@
+@import "tailwindcss";
+
+@theme {
+  /* Azul marinho — cor principal da logo */
+  --color-navy-50: #f0f4fa;
+  --color-navy-100: #dce6f2;
+  --color-navy-200: #b9cce4;
+  --color-navy-300: #8facd1;
+  --color-navy-400: #5f86b8;
+  --color-navy-500: #3d689e;
+  --color-navy-600: #2b5187;
+  --color-navy-700: #22406c;
+  --color-navy-800: #1a3153;
+  --color-navy-900: #12233c;
+  --color-navy-950: #0a1526;
+
+  /* Vermelho — cor de destaque da logo */
+  --color-crimson-50: #fdf1f2;
+  --color-crimson-100: #fbdfe2;
+  --color-crimson-200: #f5bcc1;
+  --color-crimson-300: #ec8e96;
+  --color-crimson-400: #e05a66;
+  --color-crimson-500: #ce2f3e;
+  --color-crimson-600: #b7202f;
+  --color-crimson-700: #991a28;
+  --color-crimson-800: #7d1822;
+  --color-crimson-900: #66161e;
+
+  /* Creme — off-white clássico de barbearia */
+  --color-cream-50: #fbf8f1;
+  --color-cream-100: #f5efe2;
+  --color-cream-200: #eae0c9;
+  --color-cream-300: #dbcba6;
+
+  --font-display: "Oswald", "Arial Narrow", sans-serif;
+  --font-script: "Lobster Two", "Segoe Script", cursive;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  --animate-fade-up: fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-fade-in: fade-in 0.4s ease-out both;
+  --animate-dialog-in: dialog-in 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-overlay-in: overlay-in 0.2s ease-out;
+  --animate-pulse-soft: pulse-soft 2s ease-in-out infinite;
+
+  --shadow-card: 0 1px 2px rgb(10 21 38 / 0.05), 0 4px 16px -4px rgb(10 21 38 / 0.08);
+  --shadow-card-hover: 0 2px 4px rgb(10 21 38 / 0.06), 0 12px 32px -8px rgb(10 21 38 / 0.16);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -46%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes overlay-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white font-sans text-navy-950 antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ===== Utilitários da marca ===== */
+
+/* Faixa clássica de barbearia (poste giratório) */
+.barber-stripes {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--color-crimson-600) 0 14px,
+    var(--color-cream-50) 14px 28px,
+    var(--color-navy-700) 28px 42px,
+    var(--color-cream-50) 42px 56px
+  );
+}
+
+/* Hachura para horários bloqueados / intervalos */
+.hatch-muted {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0 6px,
+    rgb(10 21 38 / 0.07) 6px 12px
+  );
+}
+
+.hatch-crimson {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0 6px,
+    rgb(183 32 47 / 0.1) 6px 12px
+  );
+}
+
+/* Brilho suave do hero */
+.hero-glow {
+  background:
+    radial-gradient(52rem 30rem at 78% -8%, rgb(61 104 158 / 0.35), transparent 65%),
+    radial-gradient(38rem 26rem at 12% 112%, rgb(183 32 47 / 0.22), transparent 60%);
+}
+
+/* Grade sutil de fundo (áreas escuras) */
+.dark-grid {
+  background-image:
+    linear-gradient(rgb(251 248 241 / 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(251 248 241 / 0.035) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+/* Scrollbar fina para listas do painel */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-navy-200) transparent;
+}
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: var(--color-navy-200);
+  border-radius: 999px;
+}
+
+/* Esconde spinners de input number */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+::selection {
+  background: var(--color-crimson-600);
+  color: white;
+}
