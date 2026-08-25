@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <circle cx="32" cy="32" r="30" fill="#12233C"/>
+  <circle cx="32" cy="32" r="25" fill="#FBF8F1"/>
+  <circle cx="32" cy="32" r="22" fill="none" stroke="#B7202F" stroke-width="1.6"/>
+  <g>
+    <circle cx="32" cy="15.5" r="3.2" fill="#9AA3AE"/>
+    <rect x="27" y="18.2" width="10" height="2.6" rx="1.2" fill="#9AA3AE"/>
+    <rect x="28" y="20.8" width="8" height="17" rx="2.4" fill="#fff" stroke="#9AA3AE" stroke-width="0.8"/>
+    <g clip-path="url(#p)">
+      <rect x="20" y="24" width="24" height="3.4" fill="#B7202F" transform="rotate(-30 32 29)"/>
+      <rect x="20" y="31" width="24" height="3.4" fill="#12233C" transform="rotate(-30 32 36)"/>
+      <rect x="20" y="38" width="24" height="3.4" fill="#B7202F" transform="rotate(-30 32 43)"/>
+    </g>
+    <rect x="27" y="37.6" width="10" height="2.6" rx="1.2" fill="#9AA3AE"/>
+  </g>
+  <path d="M32 48.5 C 29.5 45.5, 25 44.2, 21.8 45.6 C 19.6 46.5, 17.2 46, 15.8 44.2 C 16.4 48.2, 19.8 50.6, 23.8 50 C 27 49.5, 30 48.6, 32 50.6 C 34 48.6, 37 49.5, 40.2 50 C 44.2 50.6, 47.6 48.2, 48.2 44.2 C 46.8 46, 44.4 46.5, 42.2 45.6 C 39 44.2, 34.5 45.5, 32 48.5 Z" fill="#12233C"/>
+  <defs>
+    <clipPath id="p"><rect x="28" y="20.8" width="8" height="17" rx="2.4"/></clipPath>
+  </defs>
+</svg>
